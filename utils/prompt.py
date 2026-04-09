@@ -21,3 +21,27 @@ def get_prompt_for_tuning(prompt: str, temperature: float = 0.7, max_length: int
     
     return response[0]["generated_text"]
 
+
+
+#modelo de tunnign adecuar
+from datasets import load_dataset
+from transformers import AutoTokenizer, DataCollatorForLanguageModeling
+
+
+
+def model_tunning():
+    model_name = "Qwen/Qwen3-0.6B"
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    dataset = load_dataset("karthiksagarn/astro_horoscope", split="train")
+
+def tokenize(batch):
+    return tokenizer(
+        batch["horoscope"],
+        truncation=True,
+        max_length=512,
+    )
+
+
+def preprocess_data():
+    dataset = dataset.map(tokenize, batched=True, remove_columns=dataset.column_names)
+    dataset = dataset.train_test_split(test_size=0.1)

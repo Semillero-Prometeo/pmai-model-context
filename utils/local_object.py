@@ -26,7 +26,6 @@ class GlobalObjectForContext(BaseModel):
 
 def context_info(objeto: GlobalObjectForContext, contexto: str):
     """
-
     """
     
     objeto.contexto = contexto

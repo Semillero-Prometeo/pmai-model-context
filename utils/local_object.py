@@ -32,3 +32,6 @@ def context_info(objeto: GlobalObjectForContext, contexto: str):
     return objeto.contexto
 
 
+
+def build_prompt(objeto: GlobalObjectForContext):
+    return f"Objeto: {obj.etiqueta}. Camaras: {', '.join(obj.cameras_seen)}. Describe la escena."

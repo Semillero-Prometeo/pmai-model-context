@@ -8,12 +8,20 @@ from utils import local_object
 from utils.decoder import base64_to_image
 
 
+
+DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+MODEL_NAME = "Salesforce/blip-image-captioning-base"
+
+
+
 def import_Blip_model ():
     """
     Importa el modelo BLIP y su procesador desde HuggingFace.
     """
-    processor = AutoProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
-    model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base")
+    processor = AutoProcessor.from_pretrained(MODEL_NAME)
+    model = BlipForConditionalGeneration.from_pretrained(MODEL_NAME).to(DEVICE)
+    if DEVICE == "cuda":
+        model = model.half()
     return processor, model
     
     
@@ -23,9 +31,14 @@ def generate_context(variablexenbase: str, processor, model) :
     Falta definir la variable 'prompt' si es necesaria.
     """
     pil_image = base64_to_image(variablexenbase)
-    # prompt = "Describe la imagen"  # Descomentar y personalizar si se requiere un prompt
-    inputs = processor(images=pil_image, return_tensors="pt")
-    out = model.generate(**inputs, max_length=200, num_beams=20)
+    inputs = processor(images=pil_image, return_tensors="pt",truncation=True)
+    out = model.generate(
+    **inputs,
+    max_length=70,
+    min_length=40,
+    num_beams=5,
+    repetition_penalty=1.2
+    )
     context = processor.decode(out[0], skip_special_tokens=True)
     return context
 

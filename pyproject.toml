@@ -13,4 +13,6 @@ dependencies = [
     "pillow>=12.1.1",
     "torch>=2.11.0",
     "transformers<5.0.0",
+    "spiceypy>=8.1.0",
+    "pycocoevalcap>=1.2",
 ]

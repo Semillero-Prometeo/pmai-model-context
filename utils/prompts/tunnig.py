@@ -23,7 +23,7 @@ def tokenize(batch ,tokenizer):
     )
 
 
-def preprocess_data():
+def preprocess_data(model, tokenizer, dataset):
     dataset = dataset.map(tokenize, batched=True, remove_columns=dataset.column_names)
     dataset = dataset.train_test_split(test_size=0.1)
     return dataset

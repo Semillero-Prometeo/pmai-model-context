@@ -6,18 +6,18 @@ from io import BytesIO
 import base64
 from utils import local_object
 from utils.decoder import base64_to_image
-
-
+from torch import cuda, device, half, float16, no_grad
+import torch
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 MODEL_NAME = "Salesforce/blip-image-captioning-base"
-
 
 
 def import_Blip_model ():
     """
     Importa el modelo BLIP y su procesador desde HuggingFace.
     """
+
     processor = AutoProcessor.from_pretrained(MODEL_NAME)
     model = BlipForConditionalGeneration.from_pretrained(MODEL_NAME).to(DEVICE)
     if DEVICE == "cuda":

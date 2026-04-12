@@ -1,51 +1,27 @@
-#https://huggingface.co/docs/transformers/main/en/model_doc/blip#transformers.BlipForConditionalGeneration
-
+from utils.models_config import MODEL
+from utils.metrics.rendimiento.cache import get_cache, update_cache
 from transformers import AutoProcessor, BlipForConditionalGeneration
-from PIL import Image
-from io import BytesIO
-import base64
-from utils import local_object
-from utils.decoder import base64_to_image
-from torch import cuda, device, half, float16, no_grad
 import torch
 
-DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
-MODEL_NAME = "Salesforce/blip-image-captioning-base"
+DEVICE = "cpu"
 
-
-def import_Blip_model ():
+def import_Blip_model(model_size, use_cache=True):
     """
-    Importa el modelo BLIP y su procesador desde HuggingFace.
     """
+    cache = get_cache()
+    model_name = MODEL[model_size]
 
-    processor = AutoProcessor.from_pretrained(MODEL_NAME)
-    model = BlipForConditionalGeneration.from_pretrained(MODEL_NAME).to(DEVICE)
-    if DEVICE == "cuda":
-        model = model.half()
+
+    if use_cache and cache["model"] is not None and cache["current_model_name"] == model_name:
+        print(f" reutilizado el modelo desde el cache (modelo: {model_size})")
+        return cache["processor"], cache["model"]
+
+
+    processor = AutoProcessor.from_pretrained(model_name)
+    model = BlipForConditionalGeneration.from_pretrained(model_name).to(DEVICE)
+    model.eval()
+
+
+    update_cache(processor, model, model_name)
+    print(f"si se cargo en el cache (modelo: {model_size})")
     return processor, model
-    
-    
-def generate_context(variablexenbase: str, processor, model) :
-    """
-    Genera contexto a partir de una imagen en base64 usando el modelo y procesador BLIP.
-    Falta definir la variable 'prompt' si es necesaria.
-    """
-    pil_image = base64_to_image(variablexenbase)
-    inputs = processor(images=pil_image, return_tensors="pt",truncation=True)
-    out = model.generate(
-    **inputs,
-    max_length=70,
-    min_length=40,
-    num_beams=5,
-    repetition_penalty=1.2
-    )
-    context = processor.decode(out[0], skip_special_tokens=True)
-    return context
-
-
-
-def import_x_model():
-    """
-    Placeholder para importar otro modelo personalizado.
-    """
-    return ()

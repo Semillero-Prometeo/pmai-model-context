@@ -1,3 +1,5 @@
+#seguir consultando documentacion de sklearn para implementra mas de baseline y otras metricas de rendimiento
+
 from sklearn.metrics import mean_squared_error
 
 def medir_uso_baseline(y_test, y_baseline_pred):
@@ -7,3 +9,5 @@ def medir_uso_baseline(y_test, y_baseline_pred):
 
     baseline_mse = mean_squared_error(y_test, y_baseline_pred)
     print(f"MSE del Baseline (Promedio): {baseline_mse:.2f}")
+    
+    return baseline_mse

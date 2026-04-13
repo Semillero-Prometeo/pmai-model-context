@@ -4,12 +4,15 @@ from transformers import AutoProcessor, BlipForConditionalGeneration
 from utils.decoder import base64_to_image
 
 
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 def generate_context(variablexenbase: str, processor, model) :
     """
 
     """
     pil_image = base64_to_image(variablexenbase)
     inputs = processor(images=pil_image, return_tensors="pt", truncation=True).to(DEVICE)
+    model = model.to(DEVICE) 
 
     with torch.inference_mode():
         output = model.generate(
@@ -23,5 +26,4 @@ def generate_context(variablexenbase: str, processor, model) :
     
     context = processor.batch_decode(output, skip_special_tokens=True)[0]
     return context
-
 

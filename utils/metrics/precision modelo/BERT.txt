@@ -1,1 +1,0 @@
-este toca esperar si se quiere realizar embeddings y rag

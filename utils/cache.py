@@ -10,6 +10,17 @@ _MODEL_CACHE = {
 
 _UNCHANGED = object()
 
+
+"""
+    gestor de caché 
+    permite reutilizar recursos, optimizar memoria y acelerar 
+    inferencia al evitar cargas repetidas y mantener versiones cuantizadas listas para usar.
+
+"""
+
+
+
+
 def get_cache():
     return _MODEL_CACHE
 

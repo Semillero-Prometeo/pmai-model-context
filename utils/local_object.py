@@ -3,8 +3,7 @@ from typing import Any
 
 class GlobalObjectForContext(BaseModel):
     
-    """A single re-identified object, ready for the context LLM phase.
-    One per id_global; no duplicates across cameras.
+    """A single re-identified object
     """
     
     id_global: str = Field(description="Global ReID identity")

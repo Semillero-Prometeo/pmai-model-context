@@ -1685,6 +1685,22 @@ wheels = [
 ]
 
 [[package]]
+name = "notebook"
+version = "7.5.5"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "jupyter-server" },
+    { name = "jupyterlab" },
+    { name = "jupyterlab-server" },
+    { name = "notebook-shim" },
+    { name = "tornado" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/1f/6d/41052c48d6f6349ca0a7c4d1f6a78464de135e6d18f5829ba2510e62184c/notebook-7.5.5.tar.gz", hash = "sha256:dc0bfab0f2372c8278c457423d3256c34154ac2cc76bf20e9925260c461013c3", size = 14169167, upload-time = "2026-03-11T16:32:51.922Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f8/aa/cbd1deb9f07446241e88f8d5fecccd95b249bca0b4e5482214a4d1714c49/notebook-7.5.5-py3-none-any.whl", hash = "sha256:a7c14dbeefa6592e87f72290ca982e0c10f5bbf3786be2a600fda9da2764a2b8", size = 14578929, upload-time = "2026-03-11T16:32:48.021Z" },
+]
+
+[[package]]
 name = "notebook-shim"
 version = "0.2.4"
 source = { registry = "https://pypi.org/simple" }
@@ -2085,6 +2101,7 @@ dependencies = [
     { name = "ipywidgets" },
     { name = "jupyterlab" },
     { name = "matplotlib" },
+    { name = "notebook" },
     { name = "pillow" },
     { name = "pycocoevalcap" },
     { name = "pydantic" },
@@ -2101,6 +2118,7 @@ requires-dist = [
     { name = "ipywidgets", specifier = ">=8.1.8" },
     { name = "jupyterlab", specifier = ">=4.5.6" },
     { name = "matplotlib", specifier = ">=3.10.8" },
+    { name = "notebook", specifier = ">=7.5.5" },
     { name = "pillow", specifier = ">=12.1.1" },
     { name = "pycocoevalcap", specifier = ">=1.2" },
     { name = "pydantic", specifier = ">=2.0.0" },

@@ -1,27 +1,67 @@
-from utils.models_config import MODEL
-from utils.metrics.rendimiento.cache import get_cache, update_cache
-from transformers import AutoProcessor, BlipForConditionalGeneration
 import torch
+from transformers import AutoProcessor, BlipForConditionalGeneration
 
-DEVICE = "cpu"
+from utils.cache import get_cache, update_cache
 
-def import_Blip_model(model_size, use_cache=True):
+
+MODEL_ID = "Salesforce/blip-image-captioning-base"
+
+
+def import_Blip_model(model_id: str = MODEL_ID):
     """
+    
     """
     cache = get_cache()
-    model_name = MODEL[model_size]
+    if cache.get("processor") is not None and cache.get("model") is not None:
+        if cache.get("current_model_name") == model_id:
+            return cache["processor"], cache["model"]
 
+    try:
+        processor = AutoProcessor.from_pretrained(model_id, use_fast=True)
+    except ImportError:
+        processor = AutoProcessor.from_pretrained(model_id)
 
-    if use_cache and cache["model"] is not None and cache["current_model_name"] == model_name:
-        print(f" reutilizado el modelo desde el cache (modelo: {model_size})")
-        return cache["processor"], cache["model"]
-
-
-    processor = AutoProcessor.from_pretrained(model_name)
-    model = BlipForConditionalGeneration.from_pretrained(model_name).to(DEVICE)
-    model.eval()
-
-
-    update_cache(processor, model, model_name)
-    print(f"si se cargo en el cache (modelo: {model_size})")
+    model = BlipForConditionalGeneration.from_pretrained(model_id)
+    update_cache(
+        processor=processor,
+        model=model,
+        model_name=model_id,
+        model_quantized=None,
+        quant_dtype=None,
+        quant_engine=None,
+    )
     return processor, model
+
+
+def get_quantized_blip_model(
+    model,
+    model_name: str = MODEL_ID,
+    engine: str = "qnnpack",
+    dtype=torch.qint8,
+):
+    """Return a cached dynamic-quantized BLIP model when config matches."""
+    cache = get_cache()
+    if (
+        cache.get("model_quantized") is not None
+        and cache.get("current_model_name") == model_name
+        and cache.get("quant_dtype") == str(dtype)
+        and cache.get("quant_engine") == engine
+    ):
+        return cache["model_quantized"]
+
+    torch.backends.quantized.engine = engine
+    model_quantized = torch.quantization.quantize_dynamic(
+        model.cpu(), {torch.nn.Linear}, dtype=dtype
+    )
+    model_quantized = model_quantized.cpu().eval()
+
+    update_cache(
+        model=model,
+        model_name=model_name,
+        model_quantized=model_quantized,
+        quant_dtype=str(dtype),
+        quant_engine=engine,
+    )
+    return model_quantized
+    
+    

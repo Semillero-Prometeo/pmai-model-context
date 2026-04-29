@@ -17,4 +17,5 @@ dependencies = [
     "spiceypy>=8.1.0",
     "pycocoevalcap>=1.2",
     "matplotlib>=3.10.8",
+    "notebook>=7.5.5",
 ]

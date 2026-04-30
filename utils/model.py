@@ -31,7 +31,6 @@ def import_Blip_model(model_id: str = MODEL_ID):
     """
 
 
-    
     model = BlipForConditionalGeneration.from_pretrained(model_id)
     update_cache(
         processor=processor,
@@ -42,7 +41,6 @@ def import_Blip_model(model_id: str = MODEL_ID):
         quant_engine=None,
     )
     return processor, model
-
 
 
 """esta función verifica si ya existe una versión cuantizada del modelo BLIP en caché

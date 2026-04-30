@@ -12,13 +12,14 @@ def generate_context(pil_image, processor, model):
     gen_kwargs = dict(
         max_length=55,
         min_length=15,
-        num_beams=1,
-        repetition_penalty=3.0,
-        early_stopping=False,
-        length_penalty=2.0,
-        no_repeat_ngram_size=2,
+        num_beams=1, #3
+        repetition_penalty=1.3,   
+        early_stopping=False,   
+        length_penalty=2.0,    #0.95
+        no_repeat_ngram_size=2,   # 
         use_cache=True,
     )
+
 
     inputs = processor(images=pil_image, return_tensors="pt", truncation=True).to(DEVICE)
 

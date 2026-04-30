@@ -10,7 +10,7 @@ def generate_context(pil_image, processor, model):
     """
 
     gen_kwargs = dict(
-        max_length=50,
+        max_length=55,
         min_length=15,
         num_beams=1,
         repetition_penalty=3.0,

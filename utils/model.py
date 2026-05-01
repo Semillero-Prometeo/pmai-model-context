@@ -8,10 +8,11 @@ MODEL_ID = "Salesforce/blip-image-captioning-base"
 
 def import_Blip_model(model_id: str = MODEL_ID):
     """
-     Primero asegura que el modelo BLIP se cargue una sola vez y se guarde en caché,
-    y luego aplica cuantización dinámica para optimizar rendimiento en CPU, 
-     siempre verificando si ya existe una versión lista para usar.
-    
+    Load the BLIP captioning model once and keep it cached.
+
+    The default model is the smaller BLIP captioning checkpoint to keep
+    inference lightweight on CPU.
+
     """
     cache = get_cache()
     if cache.get("processor") is not None and cache.get("model") is not None:
@@ -20,18 +21,14 @@ def import_Blip_model(model_id: str = MODEL_ID):
 
     try:
         processor = AutoProcessor.from_pretrained(model_id, use_fast=True)
+    except TypeError:
+        processor = AutoProcessor.from_pretrained(model_id)
     except ImportError:
         processor = AutoProcessor.from_pretrained(model_id)
 
 
-
-
-    """
-    modelo se cargue una sola vez y quede almacenado en caché para reutilización.
-    """
-
-
     model = BlipForConditionalGeneration.from_pretrained(model_id)
+    model = model.eval()
     update_cache(
         processor=processor,
         model=model,
@@ -43,11 +40,9 @@ def import_Blip_model(model_id: str = MODEL_ID):
     return processor, model
 
 
-"""esta función verifica si ya existe una versión cuantizada del modelo BLIP en caché
-con los mismos parámetros de cuantización, y si es así, la devuelve directamente para uso.
-Si no, toma el modelo BLIP normal, lo convierte en una versión más ligera y rápida para CPU 
-mediante cuantización dinámica, y lo deja listo para inferencia. La versión cuantizada se 
-guarda en caché para evitar repetir este proceso costoso, y se devuelve lista para usar.
+"""Return a dynamically quantized BLIP model for CPU inference.
+
+The quantized version is cached so repeated runs avoid the quantization cost.
 """
 
 def get_quantized_blip_model(
@@ -56,12 +51,7 @@ def get_quantized_blip_model(
     engine: str = "qnnpack",
     dtype=torch.qint8,
 ):
-    
-    """
-    esta función verifica si ya existe una versión cuantizada del modelo BLIP en caché
-    con los mismos parámetros de cuantización, y si es así, la devuelve directamente para uso
-    
-    """
+
     cache = get_cache()
     if (
         cache.get("model_quantized") is not None
@@ -74,40 +64,13 @@ def get_quantized_blip_model(
 
 
 
-    """
-    Torch
-    Es la librería que hace los cálculos matemáticos pesados
-    """
-
-
-    """
-    este bloque toma el modelo BLIP normal, 
-    lo convierte en una versión más ligera y rápida para
-    CPU mediante cuantización dinámica, y lo deja listo para inferencia.
-    """
-
-
     torch.backends.quantized.engine = engine
-
-
-    """
-    configuración interna de PyTorch que selecciona el motor
-    de cuantización. Sin ella, el modelo no sabría 
-    cómo ejecutar las operaciones comprimidas en CPU.
-    """
-
-
 
     model_quantized = torch.quantization.quantize_dynamic(
         model.cpu(), {torch.nn.Linear}, dtype=dtype
     )
     model_quantized = model_quantized.cpu().eval()
 
-
-    """
-     la versión cuantizada se guarda en caché para evitar repetir este proceso costoso,
-     y se devuelve lista para usar.
-    """
     update_cache(
         model=model,
         model_name=model_name,

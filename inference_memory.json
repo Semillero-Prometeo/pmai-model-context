@@ -1,0 +1,530 @@
+{
+  "1": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a group of people standing in a room",
+    "best_source": "free",
+    "best_score": 0.24,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a group of people standing in a room"
+    }
+  },
+  "10": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a group of people standing in front of a sign",
+    "best_source": "free",
+    "best_score": 0.3,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a group of people standing in front of a sign"
+    }
+  },
+  "11": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a display of various types of ski equipment",
+    "best_source": "free",
+    "best_score": 0.24,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a display of various types of ski equipment"
+    }
+  },
+  "12": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a group of people standing in a room",
+    "best_source": "free",
+    "best_score": 0.24,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a group of people standing in a room"
+    }
+  },
+  "13": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a bunch of skis hanging in a store",
+    "best_source": "free",
+    "best_score": 0.24,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a bunch of skis hanging in a store"
+    }
+  },
+  "14": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a group of people standing in front of a store",
+    "best_source": "free",
+    "best_score": 0.3,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a group of people standing in front of a store"
+    }
+  },
+  "15": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a group of people standing in front of a sign",
+    "best_source": "free",
+    "best_score": 0.3,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a group of people standing in front of a sign"
+    }
+  },
+  "16": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a group of police officers standing in front of a building",
+    "best_source": "free",
+    "best_score": 0.33,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a group of police officers standing in front of a building"
+    }
+  },
+  "17": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a group of people standing in front of a building",
+    "best_source": "free",
+    "best_score": 0.3,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a group of people standing in front of a building"
+    }
+  },
+  "18": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a group of airplanes flying in the sky",
+    "best_source": "free",
+    "best_score": 0.24,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a group of airplanes flying in the sky"
+    }
+  },
+  "19": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a picture of a robot standing in front of a computer monitor",
+    "best_source": "free",
+    "best_score": 0.36,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a picture of a robot standing in front of a computer monitor"
+    }
+  },
+  "2": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a display of toys in a toy store",
+    "best_source": "free",
+    "best_score": 0.24,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a display of toys in a toy store"
+    }
+  },
+  "20": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a room filled with lots of different types of skates",
+    "best_source": "free",
+    "best_score": 0.3,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a room filled with lots of different types of skates"
+    }
+  },
+  "21": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a group of men working in a factory",
+    "best_source": "free",
+    "best_score": 0.24,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a group of men working in a factory"
+    }
+  },
+  "22": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a bunch of lights on a wall in a room",
+    "best_source": "free",
+    "best_score": 0.3,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a bunch of lights on a wall in a room"
+    }
+  },
+  "23": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "the floor is made of black and white tiles",
+    "best_source": "free",
+    "best_score": 0.27,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "the floor is made of black and white tiles"
+    }
+  },
+  "24": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a person standing in front of a wooden wall",
+    "best_source": "free",
+    "best_score": 0.27,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a person standing in front of a wooden wall"
+    }
+  },
+  "25": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "5mm - 30mm black rubber rubber rubber flexible flexible flexible rubber rubber",
+    "best_source": "free",
+    "best_score": 0.36,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "5mm - 30mm black rubber rubber rubber flexible flexible flexible rubber rubber"
+    }
+  },
+  "26": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a set of four different styles of the night circus",
+    "best_source": "free",
+    "best_score": 0.3,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a set of four different styles of the night circus"
+    }
+  },
+  "27": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "an image of a computer screen showing a number of bikes",
+    "best_source": "free",
+    "best_score": 0.33,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "an image of a computer screen showing a number of bikes"
+    }
+  },
+  "28": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a screen shot of the raven bird sticker",
+    "best_source": "free",
+    "best_score": 0.24,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a screen shot of the raven bird sticker"
+    }
+  },
+  "29": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a number of lamps hanging on a wooden wall",
+    "best_source": "free",
+    "best_score": 0.27,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a number of lamps hanging on a wooden wall"
+    }
+  },
+  "3": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a group of people standing in front of a building",
+    "best_source": "free",
+    "best_score": 0.3,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a group of people standing in front of a building"
+    }
+  },
+  "30": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a map of the trails and trails of the appalachian",
+    "best_source": "free",
+    "best_score": 0.3,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a map of the trails and trails of the appalachian"
+    }
+  },
+  "4": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a display of teddy bears in a store window",
+    "best_source": "free",
+    "best_score": 0.27,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a display of teddy bears in a store window"
+    }
+  },
+  "5": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a group of stuffed animals in a store window",
+    "best_source": "free",
+    "best_score": 0.27,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a group of stuffed animals in a store window"
+    }
+  },
+  "6": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a display of legos in a store",
+    "best_source": "free",
+    "best_score": 0.21,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a display of legos in a store"
+    }
+  },
+  "7": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a display of various types of motorcycles on display",
+    "best_source": "free",
+    "best_score": 0.27,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a display of various types of motorcycles on display"
+    }
+  },
+  "8": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "several pictures of stuffed animals in a store",
+    "best_source": "free",
+    "best_score": 0.24,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "several pictures of stuffed animals in a store"
+    }
+  },
+  "9": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a group of people standing in a room",
+    "best_source": "free",
+    "best_score": 0.24,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a group of people standing in a room"
+    }
+  },
+  "cat": {
+    "labels": [
+      "cat"
+    ],
+    "best_caption": "a group of cats standing in front of a window",
+    "best_source": "with_labels",
+    "best_score": 0.7,
+    "candidates": {
+      "with_labels": "a group of cats standing in front of a window",
+      "free": "a group of cats standing in front of a window"
+    }
+  },
+  "fair": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "this is a picture of a store display",
+    "best_source": "free",
+    "best_score": 0.24,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "this is a picture of a store display"
+    }
+  },
+  "forest": {
+    "labels": [
+      "forest"
+    ],
+    "best_caption": "a group of asteroids in the sky",
+    "best_source": "free",
+    "best_score": 0.21,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a group of asteroids in the sky"
+    }
+  },
+  "lake": {
+    "labels": [
+      "lake"
+    ],
+    "best_caption": "the sky is blue and white in color",
+    "best_source": "free",
+    "best_score": 0.24,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "the sky is blue and white in color"
+    }
+  },
+  "lakenight": {
+    "labels": [
+      "lake"
+    ],
+    "best_caption": "a view of a city from a high angle",
+    "best_source": "free",
+    "best_score": 0.27,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a view of a city from a high angle"
+    }
+  },
+  "moon": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a group of asteroids in the sky",
+    "best_source": "free",
+    "best_score": 0.21,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a group of asteroids in the sky"
+    }
+  },
+  "mycat": {
+    "labels": [
+      "cat"
+    ],
+    "best_caption": "a reflection of a cat on a laptop",
+    "best_source": "with_labels",
+    "best_score": 0.64,
+    "candidates": {
+      "with_labels": "a reflection of a cat on a laptop",
+      "free": "a reflection of a cat on a laptop"
+    }
+  },
+  "profestest": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a group of people standing in front of a wall",
+    "best_source": "free",
+    "best_score": 0.3,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a group of people standing in front of a wall"
+    }
+  },
+  "realtest": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a group of people standing in front of a building",
+    "best_source": "free",
+    "best_score": 0.3,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a group of people standing in front of a building"
+    }
+  },
+  "test2": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a group of stuffed animals on display in a store",
+    "best_source": "free",
+    "best_score": 0.3,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a group of stuffed animals on display in a store"
+    }
+  },
+  "yo": {
+    "labels": [
+      "object",
+      "scene"
+    ],
+    "best_caption": "a group of people standing in front of a building",
+    "best_source": "free",
+    "best_score": 0.3,
+    "candidates": {
+      "with_labels": "No puedo confirmar los objetos detectados en la imagen.",
+      "free": "a group of people standing in front of a building"
+    }
+  }
+}

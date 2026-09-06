@@ -9,7 +9,8 @@ class GlobalObjectForContext(BaseModel):
     id_global: str = Field(description="Global ReID identity")
     etiqueta: str = Field(description="Detection class label")
     confianza: float = Field(ge=0.0, le=1.0, description="Best confidence across views")
-    contexto: str | None = Field(default=None, description="Natural-language context from LLM")
+    contexto: str | None = Field(default=None, description="Natural-language context from image captioning")
+    question: str | None = Field(default=None, description="User question for the language model")
     sensores: dict[str, Any] = Field(default_factory=dict)
     cameras_seen: list[str] = Field(
         default_factory=list, description="Camera IDs that see this identity",

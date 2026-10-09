@@ -1,6 +1,6 @@
 import torch
 from transformers import AutoProcessor, BlipForConditionalGeneration
-from utils.cache import get_cache, update_cache
+from model_context.cache import get_cache, update_cache
 
 
 MODEL_ID = "Salesforce/blip-image-captioning-base"

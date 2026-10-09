@@ -125,7 +125,7 @@ def generate_context(pil_image, processor, model):
 
 def generate_context_from_base64(base64_string: str, processor, model):
     """Genera contexto visual directamente desde una imagen Base64."""
-    from utils.decoder import base64_to_image
+    from model_context.decoder import base64_to_image
 
     image = base64_to_image(base64_string)
     return generate_context(image, processor, model)
